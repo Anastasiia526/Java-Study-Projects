@@ -34,14 +34,13 @@ primary key(position_id)
 DROP table position_salary;
 
 INSERT INTO position_salary
-(position_employee, salary_employee)
+(employee_id, position_employee, salary_employee)
 values
-('chief_executive_officer', 100000.00),
-('director', 70020.00),
-('manager', 40000.00),
-('manager', 47000.00),
-('worker', 38000.00),
-('worker', 35000.00);
+(1, 'chief_executive_officer', 100000.00),
+(2, 'director', 70020.00),
+(3, 'manager', 40000.00),
+(4, 'manager', 47000.00),
+(5, 'worker', 38000.00);
 
 CREATE TABLE personal_info
 (
@@ -58,13 +57,13 @@ primary key(personal_info_id)
 DROP table personal_info;
 
 INSERT INTO personal_info
-(marital_status, date_of_birth, adress)
+(employee_id, marital_status, date_of_birth, adress)
 values
-('married', 'May 12, 1956', '742 Evergreen Terrace, Springfield'),
-('married', 'March 19, 1956', '742 Evergreen Terrace, Springfield'),
-('unmarried', 'April 1, 1979.', '742 Evergreen Terrace, Springfield'),
-('married', 'July 10, 1965', '31 Spooner Street, Quahog, Rhode Island'),
-('unmarried', '1960', 'Bedrock');
+(1, 'married', 'May 12, 1956', '742 Evergreen Terrace, Springfield'),
+(2, 'married', 'March 19, 1956', '742 Evergreen Terrace, Springfield'),
+(3, 'unmarried', 'April 1, 1979.', '742 Evergreen Terrace, Springfield'),
+(4, 'married', 'July 10, 1965', '31 Spooner Street, Quahog, Rhode Island'),
+(5, 'unmarried', '1960', 'Bedrock');
 
 SELECT FLName_employee, phone_employee, adress FROM employee
 INNER JOIN personal_info
