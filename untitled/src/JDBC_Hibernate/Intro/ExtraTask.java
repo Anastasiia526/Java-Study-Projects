@@ -9,7 +9,6 @@ public class ExtraTask {
     private static final String PASSWORD = "root";
 
     public static void main(String[] args) {
-        registeredDriver();
 
         Connection connection = null;
         Statement statement = null;
@@ -22,7 +21,10 @@ public class ExtraTask {
             statement.execute("UPDATE testtable SET age = 25 WHERE name = 'petro'");
             statement.execute("SELECT * FROM testtable");
 //            statement.execute("DELETE FROM testtable WHERE name = 'petro'");
-
+ResultSet resultSet = statement.executeQuery("SELECT * FROM testtable");
+while (resultSet.next()) {
+    System.out.println(resultSet.getString("name") + " " + resultSet.getString("surname") + " " +resultSet.getInt("age") );
+}
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -35,14 +37,5 @@ public class ExtraTask {
         }
     }
 
-
-    private static void registeredDriver() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            System.out.println("Driver loaded");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
 }
