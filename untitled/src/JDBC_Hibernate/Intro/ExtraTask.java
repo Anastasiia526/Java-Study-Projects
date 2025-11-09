@@ -22,6 +22,7 @@ public class ExtraTask {
             statement.execute("SELECT * FROM testtable");
 //            statement.execute("DELETE FROM testtable WHERE name = 'petro'");
 ResultSet resultSet = statement.executeQuery("SELECT * FROM testtable");
+
 while (resultSet.next()) {
     System.out.println(resultSet.getString("name") + " " + resultSet.getString("surname") + " " +resultSet.getInt("age") );
 }
