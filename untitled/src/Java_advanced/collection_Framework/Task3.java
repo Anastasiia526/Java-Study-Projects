@@ -16,13 +16,13 @@ public class Task3 {
         } catch (IOException e) {
             e.getStackTrace();
         }
-        List<Integer> myList = new LinkedList<>();
+        LinkedList<Integer> myList = new LinkedList<>();
         System.out.println("Список чисел від " + userNumber + " до 0:");
         getIntegerList(myList, userNumber);
         System.out.println();
         System.out.println("Мінімальне число із введеного списку: " + getMinimum(myList));
     }
-    public static void getIntegerList(List<Integer> list, int num){
+    public static void getIntegerList(LinkedList<Integer> list, int num){
         while (num >= 0){
             list.add(num);
             num--;
@@ -31,7 +31,7 @@ public class Task3 {
             System.out.print(temp + " ");
         }
     }
-    public static int getMinimum(List<Integer> list){
+    public static int getMinimum(LinkedList<Integer> list){
         Integer min = list.getFirst();
         for (int i = 0; i < list.size(); i++) {
             int currentNum = list.get(i);
