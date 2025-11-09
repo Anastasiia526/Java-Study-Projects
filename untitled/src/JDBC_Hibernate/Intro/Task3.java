@@ -8,7 +8,6 @@ public class Task3 {
     private static final String PASS = "root";
 
     public static void main(String[] args) {
-        registerDriver();
         Connection connection = null;
         Statement statement = null;
         try {
@@ -63,12 +62,4 @@ public class Task3 {
         }
     }
 
-
-    private static void registerDriver() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 }
